@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="Director" class="ru.itshop.dao.WorkerImp">-->
+<!--    </bean>-->
+
+<!--    <bean id="userService" class="ru.itshop.service.UserServiceImp" autowire="constructor">-->
+<!--        <constructor-arg index="0" ref="Director"/>-->
+<!--    </bean>-->
+
+    <bean id="mouse" class="ru.itshop.daoImp.ProductImp"></bean>
+
+    <bean id="traidingHallService" class="ru.itshop.service.TraidingHallServiceImp" autowire="constructor">
+        <constructor-arg index="0" ref="mouse"/>
+    </bean>
+
+</beans>
+
+
