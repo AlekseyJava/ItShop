@@ -1,47 +1,41 @@
 package ru.itshop.service;
 
-import ru.itshop.model.Product;
-
-import javax.annotation.PostConstruct;
+import ru.itshop.dao.ProductDao;
+import ru.itshop.daoImp.ProductImp;
 
 public class TraidingHallServiceImp implements TraidingHallService{
-    private Product product;
 
-    public TraidingHallServiceImp(Product product) {
-        this.product = product;
-    }
+    private ProductImp productImp;
 
-    @PostConstruct
-    public void postConstruct() {
-
+    public TraidingHallServiceImp(ProductImp productImp) {
     }
 
     @Override
-    public void sellProduct(Product product) {
-        System.out.println("sell product");
-
+    public void sellProduct(ProductDao product) {
+        productImp=(ProductImp) product;
+        productImp.sellProduct(productImp);
     }
 
     @Override
-    public void returnProduct(Product product) {
-        System.out.println("return product");
-
+    public void returnProduct(ProductDao product) {
+        productImp=(ProductImp) product;
+        productImp.returnProduct(productImp);
     }
 
     @Override
-    public void exchangeProduct(Product product) {
-        System.out.println("exchange product");
-
+    public void exchangeProduct(ProductDao product1, ProductDao product2) {
+        productImp.exchangeProduct((ProductImp) product1, (ProductImp) product2);
     }
 
     @Override
-    public void selectProduct(Product product) {
-        System.out.println("select product");
+    public void selectProduct(ProductDao product) {
+        productImp=(ProductImp) product;
+        productImp.selectProduct(productImp);
     }
 
     @Override
-    public void addProduct(Product product) {
-        System.out.println("add product");
-
+    public void addProduct(ProductDao product) {
+        productImp=(ProductImp) product;
+        productImp.addProduct(productImp);
     }
 }

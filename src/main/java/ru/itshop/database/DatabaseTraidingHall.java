@@ -13,14 +13,6 @@ public class DatabaseTraidingHall {
 
     private List<Product> productsInTraidingHall = new ArrayList<>();
 
-    public List<Product> getProductsInTraidingHall() {
-        return productsInTraidingHall;
-    }
-
-    public void setProductsInTraidingHall(List<Product> productsInTraidingHall) {
-        this.productsInTraidingHall = productsInTraidingHall;
-    }
-
     public static DatabaseTraidingHall getInstance() {
         if (instance == null) {
             instance = new DatabaseTraidingHall();
@@ -30,17 +22,17 @@ public class DatabaseTraidingHall {
 
     public void addProduct(Product product) {
         productsInTraidingHall.add(product);
-        System.out.println("Add product");
+        System.out.println("Add product (databaseTraidingHall)");
     }
     
     public void sellProduct(Product product) {
         productsInTraidingHall.remove(product);
-        System.out.println("Sell product");
+        System.out.println("Sell product (databaseTraidingHall)");
     }
 
     public void returnProduct(Product product) {
         productsInTraidingHall.add(product);
-        System.out.println("Return product");
+        System.out.println("Return product (databaseTraidingHall)");
     }
 
     public void selectProduct(String serialId) {
@@ -51,13 +43,13 @@ public class DatabaseTraidingHall {
                 System.out.println(productFromDatabase.getCost());
             }
         }
-        System.out.println("Select product");
+        System.out.println("Select product (databaseTraidingHall)");
     }
 
     public void exchangeProduct(Product product, Product product2) {
         productsInTraidingHall.add(product);
         productsInTraidingHall.remove(product2);
-        System.out.println("Exchange product");
+        System.out.println("Exchange product (databaseTraidingHall)");
     }
 
     public void selectAllProduct() {
@@ -66,8 +58,7 @@ public class DatabaseTraidingHall {
                 System.out.println(productFromDatabase.getSerialId());
                 System.out.println(productFromDatabase.getCost());
         }
-        //productsInTraidingHall.add(product);
-        System.out.println("Select all product");
+        System.out.println("Select all product (databaseTraidingHall)");
     }
 
 }

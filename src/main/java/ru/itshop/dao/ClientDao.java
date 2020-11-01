@@ -1,9 +1,8 @@
-package ru.itshop.service;
+package ru.itshop.dao;
 
-import ru.itshop.dao.ProductDao;
 import ru.itshop.model.Product;
 
-public interface ClientService {
+public interface ClientDao {
     void buy(Product product);
     void return_product(Product product);
     void exchange(Product product1, Product product2);

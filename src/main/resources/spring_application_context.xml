@@ -11,11 +11,21 @@
 <!--        <constructor-arg index="0" ref="Director"/>-->
 <!--    </bean>-->
 
-    <bean id="mouse" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="mouse_1" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="mouse_2" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="mouse_3" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="keyboard_1" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="keyboard_2" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="keyboard_3" class="ru.itshop.daoImp.ProductImp"></bean>
 
-    <bean id="traidingHallService" class="ru.itshop.service.TraidingHallServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="mouse"/>
+
+    <bean id="traidingHallServiceImp" class="ru.itshop.service.TraidingHallServiceImp" autowire="constructor">
+        <constructor-arg index="0" ref="mouse_1"/>
     </bean>
+
+    <bean id="WarehouseServiceImp" class="ru.itshop.service.WarehouseServiceImp" autowire="constructor"></bean>
+
+    <bean id="ClientServiceImp" class="ru.itshop.service.ClientServiceImp" autowire="constructor"></bean>
 
 </beans>
 
