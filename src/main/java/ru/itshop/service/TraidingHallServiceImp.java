@@ -38,4 +38,12 @@ public class TraidingHallServiceImp implements TraidingHallService{
         productImp=(ProductImp) product;
         productImp.addProduct(productImp);
     }
+
+    public ProductImp getProductImp() {
+        return productImp;
+    }
+
+    public void setProductImp(ProductImp productImp) {
+        this.productImp = productImp;
+    }
 }

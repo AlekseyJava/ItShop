@@ -4,16 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <bean id="Director" class="ru.itshop.dao.WorkerImp">-->
-<!--    </bean>-->
-
-<!--    <bean id="userService" class="ru.itshop.service.UserServiceImp" autowire="constructor">-->
-<!--        <constructor-arg index="0" ref="Director"/>-->
-<!--    </bean>-->
-
     <bean id="mouse_1" class="ru.itshop.daoImp.ProductImp"></bean>
     <bean id="mouse_2" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean id="mouse_3" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean name="mouse_3" class="ru.itshop.daoImp.ProductImp"></bean>
     <bean id="keyboard_1" class="ru.itshop.daoImp.ProductImp"></bean>
     <bean id="keyboard_2" class="ru.itshop.daoImp.ProductImp"></bean>
     <bean id="keyboard_3" class="ru.itshop.daoImp.ProductImp"></bean>
@@ -26,6 +19,8 @@
     <bean id="WarehouseServiceImp" class="ru.itshop.service.WarehouseServiceImp" autowire="constructor"></bean>
 
     <bean id="ClientServiceImp" class="ru.itshop.service.ClientServiceImp" autowire="constructor"></bean>
+
+    <import resource="notebooks-spring-context.xml"/>
 
 </beans>
 

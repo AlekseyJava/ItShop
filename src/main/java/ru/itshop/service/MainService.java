@@ -11,6 +11,8 @@ public class MainService {
                 new ClassPathXmlApplicationContext("spring_application_context.xml");
 
         TraidingHallService traidingHallService = (TraidingHallService) applicationContext.getBean("traidingHallServiceImp");
+      //  TraidingHallService traidingService = (TraidingHallService) applicationContext.getBean("traidingService");
+
         WarehouseService warehouseService = (WarehouseService) applicationContext.getBean("WarehouseServiceImp");
         ClientService clientService = (ClientService) applicationContext.getBean("ClientServiceImp");
 
@@ -48,5 +50,9 @@ public class MainService {
 
         System.out.println("\r\nLogs my test ClientService");
         clientService.buy(keyboard1);
+
+        System.out.println("\r\nLogs my test import-resourse");
+        ProductImp notebook = (ProductImp) applicationContext.getBean("acer");
+        warehouseService.addProduct(notebook);
     }
 }
