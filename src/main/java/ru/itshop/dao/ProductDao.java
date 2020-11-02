@@ -17,4 +17,6 @@ public interface ProductDao {
 
     //    взять товар со склада – addProduct
     void addProduct(Product product);
+
+    void deleteProduct_warehouse(Product product);
 }

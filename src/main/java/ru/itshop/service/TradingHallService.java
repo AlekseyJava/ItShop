@@ -3,21 +3,21 @@ package ru.itshop.service;
 import ru.itshop.dao.ProductDao;
 import ru.itshop.model.Product;
 
-public interface TraidingHallService {
+public interface TradingHallService {
 
     //    продать товар - sellProduct
-    void sellProduct(ProductDao product);
+    void sellProduct(Product product);
 
     //    сделать возврат товара - returnProduct
-    void returnProduct(ProductDao product);
+    void returnProduct(Product product);
 
     //    обменять товар – exchangeProduct
-    void exchangeProduct(ProductDao product1, ProductDao product2);
+    void exchangeProduct(Product product1, Product product2);
 
     //    выбрать товар для просмотра характеристик - selectProduct
-    void selectProduct(ProductDao product);
+    void selectProduct(Product product);
 
     //    взять товар со склада – addProduct
-    void addProduct(ProductDao product);
+    void addProduct(Product product);
 
 }

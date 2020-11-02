@@ -1,31 +1,31 @@
 package ru.itshop.service;
 
-import ru.itshop.daoImp.ProductImp;
+import ru.itshop.daoImp.ProductDaoImp;
 import ru.itshop.model.Product;
 
 public class ClientServiceImp implements ClientService {
-    private ProductImp productImp;
+    private ProductDaoImp productDaoImp;
 
     @Override
     public void buy(Product product) {
-        productImp=(ProductImp) product;
-        productImp.sellProduct(product);
+        productDaoImp =(ProductDaoImp) product;
+        productDaoImp.sellProduct(product);
     }
 
     @Override
     public void return_product(Product product) {
-        productImp=(ProductImp) product;
-        productImp.returnProduct(product);
+        productDaoImp =(ProductDaoImp) product;
+        productDaoImp.returnProduct(product);
     }
 
     @Override
     public void exchange(Product product1, Product product2) {
-        productImp.exchangeProduct((ProductImp) product1, (ProductImp) product2);
+        productDaoImp.exchangeProduct((ProductDaoImp) product1, (ProductDaoImp) product2);
     }
 
     @Override
     public void look(Product product) {
-        productImp=(ProductImp) productImp;
-        productImp.selectProduct(productImp);
+        productDaoImp =(ProductDaoImp) productDaoImp;
+        productDaoImp.selectProduct(productDaoImp);
     }
 }

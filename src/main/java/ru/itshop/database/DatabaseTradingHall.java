@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 //singelton
-public class DatabaseTraidingHall {
+public class DatabaseTradingHall {
 
-    private static DatabaseTraidingHall instance;
+    private static DatabaseTradingHall instance;
 
     private List<Product> productsInTraidingHall = new ArrayList<>();
 
-    public static DatabaseTraidingHall getInstance() {
+    public static DatabaseTradingHall getInstance() {
         if (instance == null) {
-            instance = new DatabaseTraidingHall();
+            instance = new DatabaseTradingHall();
         }
         return instance;
     }

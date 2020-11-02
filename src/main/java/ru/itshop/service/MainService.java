@@ -2,7 +2,7 @@ package ru.itshop.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.itshop.daoImp.ProductImp;
+import ru.itshop.daoImp.ProductDaoImp;
 
 public class MainService {
     public static void main(String[] args) {
@@ -10,15 +10,15 @@ public class MainService {
         ApplicationContext applicationContext =
                 new ClassPathXmlApplicationContext("spring_application_context.xml");
 
-        TraidingHallService traidingHallService = (TraidingHallService) applicationContext.getBean("traidingHallServiceImp");
+        TradingHallService tradingHallService = (TradingHallService) applicationContext.getBean("traidingHallServiceImp");
       //  TraidingHallService traidingService = (TraidingHallService) applicationContext.getBean("traidingService");
 
         WarehouseService warehouseService = (WarehouseService) applicationContext.getBean("WarehouseServiceImp");
         ClientService clientService = (ClientService) applicationContext.getBean("ClientServiceImp");
 
-        ProductImp mouse1 = (ProductImp) applicationContext.getBean("mouse_1");
-        ProductImp mouse2 = (ProductImp) applicationContext.getBean("mouse_2");
-        ProductImp keyboard1 = (ProductImp)  applicationContext.getBean("keyboard_1");
+        ProductDaoImp mouse1 = (ProductDaoImp) applicationContext.getBean("mouse_1");
+        ProductDaoImp mouse2 = (ProductDaoImp) applicationContext.getBean("mouse_2");
+        ProductDaoImp keyboard1 = (ProductDaoImp)  applicationContext.getBean("keyboard_1");
 
         mouse1.setName("mouse defender");
         mouse1.setSerialId("0001");
@@ -33,14 +33,14 @@ public class MainService {
         keyboard1.setCost(500);
 
         System.out.println("\r\nLogs my test traidingHallService");
-        traidingHallService.addProduct(mouse1);
-        traidingHallService.addProduct(mouse2);
-        traidingHallService.addProduct(keyboard1);
-        traidingHallService.selectProduct(mouse1);
-        traidingHallService.sellProduct(mouse2);
-        traidingHallService.returnProduct(mouse2);
-        traidingHallService.sellProduct(mouse1);
-        traidingHallService.exchangeProduct(mouse1, mouse2);
+        tradingHallService.addProduct(mouse1);
+        tradingHallService.addProduct(mouse2);
+        tradingHallService.addProduct(keyboard1);
+        tradingHallService.selectProduct(mouse1);
+        tradingHallService.sellProduct(mouse2);
+        tradingHallService.returnProduct(mouse2);
+        tradingHallService.sellProduct(mouse1);
+        tradingHallService.exchangeProduct(mouse1, mouse2);
 
         System.out.println("\r\nLogs my test WarehouseService");
         for(int i=0; i < 10; i++) {
@@ -52,7 +52,7 @@ public class MainService {
         clientService.buy(keyboard1);
 
         System.out.println("\r\nLogs my test import-resourse");
-        ProductImp notebook = (ProductImp) applicationContext.getBean("acer");
+        ProductDaoImp notebook = (ProductDaoImp) applicationContext.getBean("acer");
         warehouseService.addProduct(notebook);
     }
 }

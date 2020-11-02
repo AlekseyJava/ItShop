@@ -4,15 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="mouse_1" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean id="mouse_2" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean name="mouse_3" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean id="keyboard_1" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean id="keyboard_2" class="ru.itshop.daoImp.ProductImp"></bean>
-    <bean id="keyboard_3" class="ru.itshop.daoImp.ProductImp"></bean>
+    <bean id="mouse_1" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean id="mouse_2" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean name="mouse_3" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean id="keyboard_1" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean id="keyboard_2" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean id="keyboard_3" class="ru.itshop.daoImp.ProductDaoImp"></bean>
 
 
-    <bean id="traidingHallServiceImp" class="ru.itshop.service.TraidingHallServiceImp" autowire="constructor">
+    <bean id="traidingHallServiceImp" class="ru.itshop.service.TradingHallServiceImp" autowire="constructor">
         <constructor-arg index="0" ref="mouse_1"/>
     </bean>
 
