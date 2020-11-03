@@ -5,7 +5,7 @@ import ru.itshop.database.DatabaseTradingHall;
 import ru.itshop.database.DatabaseWarehouse;
 import ru.itshop.model.Product;
 
-public class ProductDaoImp extends Product implements ProductDao {
+public class ProductDaoImp implements ProductDao {
 
     DatabaseTradingHall databaseTradingHall = DatabaseTradingHall.getInstance(); //database  - singelton
 
@@ -41,11 +41,13 @@ public class ProductDaoImp extends Product implements ProductDao {
         System.out.println("add product (ProductImp.class)");
     }
 
+    @Override
     public void addProduct_warehouse(Product product) {
         databaseWarehouse.addProduct(product);
         System.out.println("add product (ProductImp.class)");
     }
 
+    @Override
     public void deleteProduct_warehouse(Product product) {
         databaseWarehouse.deleteProduct(product);
         System.out.println("add product (ProductImp.class)");

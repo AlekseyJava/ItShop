@@ -2,7 +2,9 @@ package ru.itshop.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.itshop.dao.ProductDao;
 import ru.itshop.daoImp.ProductDaoImp;
+import ru.itshop.model.Product;
 
 public class MainService {
     public static void main(String[] args) {
@@ -10,15 +12,14 @@ public class MainService {
         ApplicationContext applicationContext =
                 new ClassPathXmlApplicationContext("spring_application_context.xml");
 
-        TradingHallService tradingHallService = (TradingHallService) applicationContext.getBean("traidingHallServiceImp");
-      //  TraidingHallService traidingService = (TraidingHallService) applicationContext.getBean("traidingService");
+        TradingHallService tradingHallService = (TradingHallService) applicationContext.getBean("tradingHallServiceImp");
 
         WarehouseService warehouseService = (WarehouseService) applicationContext.getBean("WarehouseServiceImp");
         ClientService clientService = (ClientService) applicationContext.getBean("ClientServiceImp");
 
-        ProductDaoImp mouse1 = (ProductDaoImp) applicationContext.getBean("mouse_1");
-        ProductDaoImp mouse2 = (ProductDaoImp) applicationContext.getBean("mouse_2");
-        ProductDaoImp keyboard1 = (ProductDaoImp)  applicationContext.getBean("keyboard_1");
+        Product mouse1 = (Product) applicationContext.getBean("mouse_1");
+        Product mouse2 = (Product) applicationContext.getBean("mouse_2");
+        Product keyboard1 = (Product)  applicationContext.getBean("keyboard_1");
 
         mouse1.setName("mouse defender");
         mouse1.setSerialId("0001");
@@ -52,7 +53,7 @@ public class MainService {
         clientService.buy(keyboard1);
 
         System.out.println("\r\nLogs my test import-resourse");
-        ProductDaoImp notebook = (ProductDaoImp) applicationContext.getBean("acer");
+        Product notebook = (Product) applicationContext.getBean("acer");
         warehouseService.addProduct(notebook);
     }
 }

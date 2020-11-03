@@ -5,8 +5,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-        <bean id="acer" class="ru.itshop.daoImp.ProductDaoImp"></bean>
-        <bean id="hp" class="ru.itshop.daoImp.ProductDaoImp"></bean>
-        <bean id="lenovo" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+        <bean id="acer" class="ru.itshop.model.Product"></bean>
+        <bean id="hp" class="ru.itshop.model.Product"></bean>
+        <bean id="lenovo" class="ru.itshop.model.Product"></bean>
 
 </beans>

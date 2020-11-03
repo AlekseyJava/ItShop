@@ -5,7 +5,7 @@ import ru.itshop.database.DatabaseTradingHall;
 import ru.itshop.model.Client;
 import ru.itshop.model.Product;
 
-public class ClientDaoImp extends Client implements ClientDao {
+public class ClientDaoImp implements ClientDao {
 
     DatabaseTradingHall databaseTradingHall = DatabaseTradingHall.getInstance(); //database  - singelton
 

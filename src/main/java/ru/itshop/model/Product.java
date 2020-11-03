@@ -1,8 +1,13 @@
 package ru.itshop.model;
 
+import ru.itshop.dao.ProductDao;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Model {
+
+    private long id;
     private String name;
     private String serialId;
     private int cost;
@@ -44,5 +49,14 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(name, serialId, cost);
+    }
+
+    @Override
+    public Serializable getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

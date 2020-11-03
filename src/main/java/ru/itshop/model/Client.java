@@ -1,6 +1,10 @@
 package ru.itshop.model;
 
-public class Client {
+import java.io.Serializable;
+
+public class Client implements Model{
+
+    private long id;
     private String name;
     private String lastName;
     private String phoneNumber;
@@ -36,5 +40,14 @@ public class Client {
 
     public void setVipClient(boolean vipClient) {
         this.vipClient = vipClient;
+    }
+
+    @Override
+    public Serializable getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

@@ -8,7 +8,8 @@ public class TradingHallServiceImp implements TradingHallService {
 
     private ProductDao productDao;
 
-    public TradingHallServiceImp(ProductDaoImp productDaoImp) {
+    public TradingHallServiceImp(ProductDao productDao) {
+        this.productDao = productDao;
     }
 
     @Override
