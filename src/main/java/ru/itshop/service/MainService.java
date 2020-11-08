@@ -12,8 +12,6 @@ import ru.itshop.model.Product;
 public class MainService {
     public static void main(String[] args) {
 
-//        ApplicationContext applicationContext =
-//                new ClassPathXmlApplicationContext("spring_application_context.xml");
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(SpringConfig.class);
 

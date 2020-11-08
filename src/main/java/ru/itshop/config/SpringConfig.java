@@ -2,7 +2,11 @@ package ru.itshop.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import ru.itshop.dao.TradingHallDao;
+import ru.itshop.daoImp.ClientDaoImp;
 import ru.itshop.daoImp.ProductDaoImp;
+import ru.itshop.daoImp.TradingHallDaoImpl;
+import ru.itshop.daoImp.WarehouseDaoImpl;
 import ru.itshop.model.Product;
 import ru.itshop.service.ClientServiceImp;
 import ru.itshop.service.TradingHallServiceImp;
@@ -16,8 +20,18 @@ import ru.itshop.service.WarehouseServiceImp;
 public class SpringConfig {
 
     @Bean()
-    public ProductDaoImp mouse() {
-        return new ProductDaoImp();
+    public TradingHallDaoImpl tradingHallDaoImpl() {
+        return new TradingHallDaoImpl();
+    }
+
+    @Bean()
+    public WarehouseDaoImpl warehouseDaoImpl() {
+        return new WarehouseDaoImpl();
+    }
+
+    @Bean()
+    public ClientDaoImp clientDaoImp() {
+        return new ClientDaoImp();
     }
 
     @Bean()
@@ -37,17 +51,17 @@ public class SpringConfig {
 
     @Bean(name = "tradingHallServiceImp")
     public TradingHallServiceImp tradingHallServiceImp () {
-        return new TradingHallServiceImp(mouse());
+        return new TradingHallServiceImp(tradingHallDaoImpl());
     }
 
     @Bean
     public WarehouseServiceImp warehouseServiceImp() {
-        return new WarehouseServiceImp(mouse());
+        return new WarehouseServiceImp(warehouseDaoImpl());
     }
 
     @Bean
     public ClientServiceImp clientServiceImp() {
-        return new ClientServiceImp(mouse());
+        return new ClientServiceImp(clientDaoImp());
     }
 
 }
