@@ -7,6 +7,8 @@ import java.util.Objects;
 
 public class Product implements Model {
 
+    private static final long serialVersionUID = 1931737332645464539L;
+
     private long id;
     private String name;
     private String serialId;

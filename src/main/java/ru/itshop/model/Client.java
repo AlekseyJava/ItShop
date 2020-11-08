@@ -2,7 +2,9 @@ package ru.itshop.model;
 
 import java.io.Serializable;
 
-public class Client implements Model{
+public class Client implements Model {
+
+    private static final long serialVersionUID = 7931737332645464539L;
 
     private long id;
     private String name;

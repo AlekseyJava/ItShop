@@ -5,6 +5,7 @@ import ru.itshop.model.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+//singelton
 public class DatabaseWarehouse {
     private static DatabaseWarehouse instance;
 
