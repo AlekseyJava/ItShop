@@ -28,8 +28,14 @@ public class ProductDaoImp implements ProductDao {
 
     @Override
     public void sellProduct(Product product) {
-        databaseTradingHall.sellProduct(product);
-        System.out.println("sell product (ProductImp.class)");
+        if(databaseTradingHall.getProductsInTraidingHall().size()>0) {
+            databaseTradingHall.sellProduct(product);
+            System.out.println("sell product (ProductImp.class)");
+        }
+        else {
+            System.out.println("there are no products in the traiding hall");
+            System.out.println("sell product (ProductImp.class)");
+        }
     }
 
     @Override
@@ -76,8 +82,15 @@ public class ProductDaoImp implements ProductDao {
 
     @Override
     public void deleteProduct_warehouse(Product product) {
-        databaseWarehouse.deleteProduct(product);
-        System.out.println("add product (ProductImp.class)");
+        if (databaseWarehouse.getProductsInWarehouse().size()>0) {
+            databaseWarehouse.deleteProduct(product);
+            System.out.println("delete product (ProductImp.class)");
+        }
+        else {
+            databaseWarehouse.deleteProduct(product);
+            System.out.println("there are no products in the traiding hall");
+            System.out.println("delete product (ProductImp.class)");
+        }
     }
 
 }

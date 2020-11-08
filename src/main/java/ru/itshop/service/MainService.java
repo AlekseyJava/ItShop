@@ -49,11 +49,12 @@ public class MainService {
         tradingHallService.exchangeProduct(mouse1, mouse2);
 
         System.out.println("\r\nLogs my test WarehouseService");
+        warehouseService.deleteProduct(mouse1);
         for(int i=0; i < 10; i++) {
             warehouseService.addProduct(mouse1);
         }
         warehouseService.deleteProduct(mouse1);
-
+        
         System.out.println("\r\nLogs my test ClientService");
         clientService.buy(keyboard1);
 
