@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="mouse" class="ru.itshop.daoImp.ProductDaoImp"></bean>
+    <bean id="trading" class="ru.itshop.daoImp.TradingHallDaoImpl"></bean>
+    <bean id="warehouse" class="ru.itshop.daoImp.WarehouseDaoImpl"></bean>
+    <bean id="client" class="ru.itshop.daoImp.ClientDaoImp"></bean>
     <bean id="mouse_1" class="ru.itshop.model.Product"></bean>
     <bean id="mouse_2" class="ru.itshop.model.Product"></bean>
     <bean name="mouse_3" class="ru.itshop.model.Product"></bean>
@@ -13,15 +15,15 @@
     <bean id="keyboard_3" class="ru.itshop.model.Product"></bean>
 
     <bean id="tradingHallServiceImp" class="ru.itshop.service.TradingHallServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="mouse"/>
+        <constructor-arg index="0" ref="trading"/>
     </bean>
 
     <bean id="WarehouseServiceImp" class="ru.itshop.service.WarehouseServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="mouse"/>
+        <constructor-arg index="0" ref="warehouse"/>
     </bean>
 
     <bean id="ClientServiceImp" class="ru.itshop.service.ClientServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="mouse"/>
+        <constructor-arg index="0" ref="client"/>
     </bean>
 
     <import resource="notebooks-spring-context.xml"/>
