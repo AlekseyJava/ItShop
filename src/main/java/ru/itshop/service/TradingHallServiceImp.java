@@ -1,12 +1,19 @@
 package ru.itshop.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import ru.itshop.dao.ProductDao;
 import ru.itshop.daoImp.ProductDaoImp;
 import ru.itshop.model.Product;
 
+@Service
 public class TradingHallServiceImp implements TradingHallService {
 
     private ProductDao productDao;
+
+    public TradingHallServiceImp() {
+
+    }
 
     public TradingHallServiceImp(ProductDao productDao) {
         this.productDao = productDao;

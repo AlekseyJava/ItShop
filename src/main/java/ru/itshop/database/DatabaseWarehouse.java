@@ -27,4 +27,11 @@ public class DatabaseWarehouse {
         System.out.println("Delete product (database Warehouse)");
     }
 
+    public List<Product> getProductsInWarehouse() {
+        return productsInWarehouse;
+    }
+
+    public void setProductsInWarehouse(List<Product> productsInWarehouse) {
+        this.productsInWarehouse = productsInWarehouse;
+    }
 }

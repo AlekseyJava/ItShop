@@ -1,8 +1,10 @@
 package ru.itshop.service;
 
+import org.springframework.stereotype.Service;
 import ru.itshop.dao.ProductDao;
 import ru.itshop.model.Product;
 
+@Service
 public class WarehouseServiceImp implements WarehouseService{
 
     private ProductDao productDao;

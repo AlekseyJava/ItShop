@@ -1,15 +1,30 @@
 package ru.itshop.daoImp;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 import ru.itshop.dao.ProductDao;
 import ru.itshop.database.DatabaseTradingHall;
 import ru.itshop.database.DatabaseWarehouse;
 import ru.itshop.model.Product;
 
+@Repository
 public class ProductDaoImp implements ProductDao {
 
     DatabaseTradingHall databaseTradingHall = DatabaseTradingHall.getInstance(); //database  - singelton
 
     DatabaseWarehouse databaseWarehouse = DatabaseWarehouse.getInstance();
+
+    @Value("${tradingHall.maxProducts}")
+    int maxProductsInTraidingHall;
+
+    @Value("${tradingHall.minProducts}")
+    int minProductsInTraidingHall;
+
+    @Value("${warehouse.maxProducts}")
+    int maxProductsInWarehouse;
+
+    @Value("${warehouse.minProducts}")
+    int minProductsInWarehouse;
 
     @Override
     public void sellProduct(Product product) {
@@ -37,14 +52,26 @@ public class ProductDaoImp implements ProductDao {
 
     @Override
     public void addProduct(Product product) {
-        databaseTradingHall.addProduct(product);
-        System.out.println("add product (ProductImp.class)");
+        if(databaseTradingHall.getProductsInTraidingHall().size()<maxProductsInTraidingHall) {
+            databaseTradingHall.addProduct(product);
+            System.out.println("add product (ProductImp.class)");
+        }
+        else {
+            System.out.println("to many products in stock. Product don't add");
+            System.out.println("add product (ProductImp.class)");
+        }
     }
 
     @Override
     public void addProduct_warehouse(Product product) {
-        databaseWarehouse.addProduct(product);
-        System.out.println("add product (ProductImp.class)");
+        if(databaseWarehouse.getProductsInWarehouse().size()<maxProductsInWarehouse) {
+            databaseWarehouse.addProduct(product);
+            System.out.println("add product (ProductImp.class)");
+        }
+        else {
+            System.out.println("to many products in warehouse. Product don't add");
+            System.out.println("add product (ProductImp.class)");
+        }
     }
 
     @Override

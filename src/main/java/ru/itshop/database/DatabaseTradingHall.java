@@ -61,4 +61,11 @@ public class DatabaseTradingHall {
         System.out.println("Select all product (databaseTraidingHall)");
     }
 
+    public List<Product> getProductsInTraidingHall() {
+        return productsInTraidingHall;
+    }
+
+    public void setProductsInTraidingHall(List<Product> productsInTraidingHall) {
+        this.productsInTraidingHall = productsInTraidingHall;
+    }
 }

@@ -1,10 +1,12 @@
 package ru.itshop.daoImp;
 
+import org.springframework.stereotype.Repository;
 import ru.itshop.dao.ClientDao;
 import ru.itshop.database.DatabaseTradingHall;
 import ru.itshop.model.Client;
 import ru.itshop.model.Product;
 
+@Repository
 public class ClientDaoImp implements ClientDao {
 
     DatabaseTradingHall databaseTradingHall = DatabaseTradingHall.getInstance(); //database  - singelton

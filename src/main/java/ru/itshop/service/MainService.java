@@ -1,25 +1,30 @@
 package ru.itshop.service;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.itshop.dao.ProductDao;
-import ru.itshop.daoImp.ProductDaoImp;
+import org.springframework.stereotype.Component;
+import ru.itshop.config.SpringConfig;
 import ru.itshop.model.Product;
 
+
+@Component
 public class MainService {
     public static void main(String[] args) {
 
+//        ApplicationContext applicationContext =
+//                new ClassPathXmlApplicationContext("spring_application_context.xml");
         ApplicationContext applicationContext =
-                new ClassPathXmlApplicationContext("spring_application_context.xml");
+                new AnnotationConfigApplicationContext(SpringConfig.class);
 
         TradingHallService tradingHallService = (TradingHallService) applicationContext.getBean("tradingHallServiceImp");
 
-        WarehouseService warehouseService = (WarehouseService) applicationContext.getBean("WarehouseServiceImp");
-        ClientService clientService = (ClientService) applicationContext.getBean("ClientServiceImp");
+        WarehouseService warehouseService = (WarehouseService) applicationContext.getBean("warehouseServiceImp");
+        ClientService clientService = (ClientService) applicationContext.getBean("clientServiceImp");
 
         Product mouse1 = (Product) applicationContext.getBean("mouse_1");
         Product mouse2 = (Product) applicationContext.getBean("mouse_2");
-        Product keyboard1 = (Product)  applicationContext.getBean("keyboard_1");
+        Product keyboard1 = (Product) applicationContext.getBean("keyboard_1");
 
         mouse1.setName("mouse defender");
         mouse1.setSerialId("0001");
