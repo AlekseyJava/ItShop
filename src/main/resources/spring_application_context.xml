@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--       http://www.springframework.org/schema/beans/spring-beans.xsd">-->
 
-    <bean id="trading" class="ru.itshop.daoImp.TradingHallDaoImpl"></bean>
-    <bean id="warehouse" class="ru.itshop.daoImp.WarehouseDaoImpl"></bean>
-    <bean id="client" class="ru.itshop.daoImp.ClientDaoImp"></bean>
-    <bean id="mouse_1" class="ru.itshop.model.Product"></bean>
-    <bean id="mouse_2" class="ru.itshop.model.Product"></bean>
-    <bean name="mouse_3" class="ru.itshop.model.Product"></bean>
-    <bean id="keyboard_1" class="ru.itshop.model.Product"></bean>
-    <bean id="keyboard_2" class="ru.itshop.model.Product"></bean>
-    <bean id="keyboard_3" class="ru.itshop.model.Product"></bean>
+<!--    <bean id="trading" class="ru.itshop.daoImp.TradingHallDaoImpl"></bean>-->
+<!--    <bean id="warehouse" class="ru.itshop.daoImp.WarehouseDaoImpl"></bean>-->
+<!--    <bean id="client" class="ru.itshop.daoImp.ClientDaoImp"></bean>-->
+<!--    <bean id="mouse_1" class="ru.itshop.model.Product"></bean>-->
+<!--    <bean id="mouse_2" class="ru.itshop.model.Product"></bean>-->
+<!--    <bean name="mouse_3" class="ru.itshop.model.Product"></bean>-->
+<!--    <bean id="keyboard_1" class="ru.itshop.model.Product"></bean>-->
+<!--    <bean id="keyboard_2" class="ru.itshop.model.Product"></bean>-->
+<!--    <bean id="keyboard_3" class="ru.itshop.model.Product"></bean>-->
 
-    <bean id="tradingHallServiceImp" class="ru.itshop.service.TradingHallServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="trading"/>
-    </bean>
+<!--    <bean id="tradingHallServiceImp" class="ru.itshop.service.TradingHallServiceImp" autowire="constructor">-->
+<!--        <constructor-arg index="0" ref="trading"/>-->
+<!--    </bean>-->
 
-    <bean id="WarehouseServiceImp" class="ru.itshop.service.WarehouseServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="warehouse"/>
-    </bean>
+<!--    <bean id="WarehouseServiceImp" class="ru.itshop.service.WarehouseServiceImp" autowire="constructor">-->
+<!--        <constructor-arg index="0" ref="warehouse"/>-->
+<!--    </bean>-->
 
-    <bean id="ClientServiceImp" class="ru.itshop.service.ClientServiceImp" autowire="constructor">
-        <constructor-arg index="0" ref="client"/>
-    </bean>
+<!--    <bean id="ClientServiceImp" class="ru.itshop.service.ClientServiceImp" autowire="constructor">-->
+<!--        <constructor-arg index="0" ref="client"/>-->
+<!--    </bean>-->
 
-    <import resource="notebooks-spring-context.xml"/>
+<!--    <import resource="notebooks-spring-context.xml"/>-->
 
-</beans>
+<!--</beans>-->
 
 
