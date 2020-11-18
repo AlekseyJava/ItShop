@@ -3,7 +3,6 @@ package ru.itshop.daoImp;
 import ru.itshop.dao.WarehouseDao;
 import ru.itshop.database.DatabaseWarehouse;
 import ru.itshop.model.Product;
-import ru.itshop.service.WarehouseServiceImp;
 
 public class WarehouseDaoImpl implements WarehouseDao {
 

@@ -1,8 +1,7 @@
 package ru.itshop.service;
 
-import ru.itshop.dao.ProductDao;
+import ru.itshop.controller.dto.ProductDto;
 import ru.itshop.dao.TradingHallDao;
-import ru.itshop.daoImp.ProductDaoImp;
 import ru.itshop.model.Product;
 
 public class TradingHallServiceImp implements TradingHallService {
@@ -14,28 +13,38 @@ public class TradingHallServiceImp implements TradingHallService {
     }
 
     @Override
-    public void sellProduct(Product product) {
+    public ProductDto sellProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
         tradingHallServiceDao.sellProduct(product);
+        return productDto;
     }
 
     @Override
-    public void returnProduct(Product product) {
+    public ProductDto returnProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
         tradingHallServiceDao.returnProduct(product);
+        return productDto;
     }
 
     @Override
-    public void exchangeProduct(Product product1, Product product2) {
+    public ProductDto exchangeProduct(ProductDto productDto1, ProductDto productDto2) {
+        Product product1 = new Product(productDto1.getId(), productDto1.getName(), productDto1.getSerialId(), productDto1.getCost());
+        Product product2 = new Product(productDto2.getId(), productDto2.getName(), productDto2.getSerialId(), productDto2.getCost());
         tradingHallServiceDao.exchangeProduct(product1, product2);
+        return productDto2;
     }
 
     @Override
-    public void selectProduct(Product product) {
+    public ProductDto selectProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
         tradingHallServiceDao.selectProduct(product);
+        return productDto;
     }
 
     @Override
-    public void addProduct(Product product) {
+    public ProductDto addProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
         tradingHallServiceDao.addProduct(product);
+        return productDto;
     }
-
 }

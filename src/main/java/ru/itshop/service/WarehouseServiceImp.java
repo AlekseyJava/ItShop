@@ -1,6 +1,6 @@
 package ru.itshop.service;
 
-import ru.itshop.dao.ProductDao;
+import ru.itshop.controller.dto.ProductDto;
 import ru.itshop.dao.WarehouseDao;
 import ru.itshop.model.Product;
 
@@ -12,13 +12,18 @@ public class WarehouseServiceImp implements WarehouseService{
         this.warehouseDao = warehouseDao;
     }
 
+
     @Override
-    public void addProduct(Product product) {
+    public ProductDto addProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
         warehouseDao.addProduct_warehouse(product);
+        return productDto;
     }
 
     @Override
-    public void deleteProduct(Product product) {
-       warehouseDao.deleteProduct_warehouse(product);
+    public ProductDto deleteProduct(ProductDto productDto) {
+        Product product = new Product(productDto.getId(), productDto.getName(), productDto.getSerialId(), productDto.getCost());
+        warehouseDao.deleteProduct_warehouse(product);
+        return productDto;
     }
 }

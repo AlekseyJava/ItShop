@@ -1,23 +1,22 @@
 package ru.itshop.service;
 
-import ru.itshop.dao.ProductDao;
-import ru.itshop.model.Product;
+import ru.itshop.controller.dto.ProductDto;
 
 public interface TradingHallService {
 
     //    продать товар - sellProduct
-    void sellProduct(Product product);
+    ProductDto sellProduct(ProductDto productDto);
 
     //    сделать возврат товара - returnProduct
-    void returnProduct(Product product);
+    ProductDto returnProduct(ProductDto productDto);
 
     //    обменять товар – exchangeProduct
-    void exchangeProduct(Product product1, Product product2);
+    ProductDto exchangeProduct(ProductDto productDto1, ProductDto productDto2);
 
     //    выбрать товар для просмотра характеристик - selectProduct
-    void selectProduct(Product product);
+    ProductDto selectProduct(ProductDto productDto);
 
     //    взять товар со склада – addProduct
-    void addProduct(Product product);
+    ProductDto addProduct(ProductDto productDto);
 
 }

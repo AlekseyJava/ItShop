@@ -1,7 +1,5 @@
 package ru.itshop.model;
 
-import ru.itshop.dao.ProductDao;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,6 +11,13 @@ public class Product implements Model {
     private String name;
     private String serialId;
     private int cost;
+
+    public Product(long id, String name, String serialId, int cost) {
+        this.id = id;
+        this.name = name;
+        this.serialId = serialId;
+        this.cost = cost;
+    }
 
     public String getName() {
         return name;

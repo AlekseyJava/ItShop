@@ -1,11 +1,10 @@
 package ru.itshop.service;
 
-import ru.itshop.dao.ProductDao;
-import ru.itshop.model.Product;
+import ru.itshop.controller.dto.ProductDto;
 
 public interface ClientService {
-    void buy(Product product);
-    void return_product(Product product);
-    void exchange(Product product1, Product product2);
-    void look(Product product);
+    ProductDto buy(ProductDto productDto);
+    ProductDto return_product(ProductDto productDto);
+    ProductDto exchange(ProductDto productDto1, ProductDto productDto2);
+    ProductDto look(ProductDto productDto);
 }
